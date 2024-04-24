@@ -1,5 +1,10 @@
 import { useState } from "react";
 import "./App.css";
+import {
+  title,
+  searchPlaceholder,
+  buttonPlaceholder,
+} from "./components/constanta";
 
 function App() {
   const [search, setSearch] = useState("");
@@ -20,16 +25,16 @@ function App() {
 
   return (
     <>
-      <h1>Weather App with React</h1>
+      <h1>{title}</h1>
       <input
         className="mt-10 w-64 h-12 px-4 py-2 rounded-md bg-slate-50 text-black"
         type="text"
-        placeholder="City?"
+        placeholder={searchPlaceholder}
         onChange={(e) => setSearch(e.target.value)}
       ></input>
 
       <button onClick={searched} className="ml-4 bg-red-500">
-        Search
+        {buttonPlaceholder}
       </button>
       {typeof currentWeather.main !== "undefined" ? (
         <>
